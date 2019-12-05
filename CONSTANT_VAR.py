@@ -7,6 +7,7 @@ CHROME_DRIVER_PATH = 'chromedriver'
 MINE_SIZE = 9
 DISTINCTION_POINT = 3
 WAIT_SEC = 10
+MAX_SCORE = 999
 
 
 class Constant:

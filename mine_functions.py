@@ -482,7 +482,6 @@ def random_choose_one(driver, mine):
     while True:
         x = random.choice(range(0, 9))
         y = random.choice(range(0, 9))
-        print('random', x, y)
         if mine[y][x][1] != 0:
             continue
         left_click(driver, y=y, x=x)
@@ -490,6 +489,7 @@ def random_choose_one(driver, mine):
         if not one_block_mine_check(driver=driver, y=y, x=x):  # 지뢰 발견
             return mine, False
         return mine, True
+
 
 def check_game_clear(driver):
     state = driver.find_element_by_id('top_area_face'). \
@@ -551,6 +551,3 @@ def driver_wait_by_id(driver, id, delay):
         element = WebDriverWait(driver, delay).until(EC.presence_of_element_located((By.ID, id)))
     except TimeoutException as e:
         print(e)
-
-
-
